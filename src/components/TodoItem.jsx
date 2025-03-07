@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const TodoItem = ({ index, text, updateTodo }) => {
+const TodoItem = ({ index, text, completed, updateTodo, toggleTodo }) => {
   const [isEditing, setIsEditing] = useState(false);
   const [newText, setNewText] = useState(text);
 
@@ -13,8 +13,13 @@ const TodoItem = ({ index, text, updateTodo }) => {
     setIsEditing(false);
   };
 
+  const handleToggleClick = () => {
+    toggleTodo(index);
+  };
+
   return (
-    <li>
+    <li style={{ textDecoration: completed ? 'line-through' : 'none' }}>
+      <input type="checkbox" checked={completed} onChange={handleToggleClick} />
       {isEditing ? (
         <input
           type="text"

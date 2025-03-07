@@ -14,3 +14,8 @@ li {
 button {
   margin-left: 10px;
 }
+
+li.completed {
+  text-decoration: line-through;
+  color: gray;
+}
