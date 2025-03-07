@@ -4,19 +4,23 @@ const TodoItem = ({ index, text, completed, updateTodo, deleteTodo, toggleTodo }
   const [isEditing, setIsEditing] = useState(false);
   const [newText, setNewText] = useState(text);
 
+  // Function for edit button when clicking
   const handleEditClick = () => {
     setIsEditing(true);
   };
 
+  // Function for save button when clicking
   const handleSaveClick = () => {
     updateTodo(index, newText);
     setIsEditing(false);
   };
 
+  // Function for delete button when clicking
   const handleDeleteClick = () => {
     deleteTodo(index);
   };
 
+  // Function for checkbox 
   const handleToggleClick = () => {
     toggleTodo(index);
   };

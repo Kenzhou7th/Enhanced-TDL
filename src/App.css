@@ -6,6 +6,7 @@
   --background-image-dark: url('./assets/light-mode.jpg');
 }
 
+/* Dark Mode styling part */
 body.light-mode {
   --background-color: #242424;
   --text-color: #fff;
@@ -58,6 +59,11 @@ li {
   margin: 10px 0;
 }
 
+li.completed {
+  text-decoration: line-through;
+  color: gray;
+}
+
 .todo-text {
   display: flex;
   align-items: center;
@@ -79,6 +85,7 @@ button {
   padding: 10px 21px;
 }
 
+/* Styling for Light n Dark buttons */
 .light-mode-button {
   background-color: #ffffff;
   color: #000000;
@@ -89,9 +96,4 @@ button {
   background-color: #222222;
   color: #ffffff;
   border-radius: 21px;
-}
-
-li.completed {
-  text-decoration: line-through;
-  color: gray;
 }

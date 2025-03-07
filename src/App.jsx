@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import TodoList from './components/TodoList';
 import './App.css';
 
+// Variables for todos, filter, and dark mode
 function App() {
   const [todos, setTodos] = useState([]);
   const [filter, setFilter] = useState('All');
@@ -14,17 +15,20 @@ function App() {
     localStorage.setItem('theme', darkMode ? 'dark' : 'light');
   }, [darkMode]);
 
+  // Function for adding tasks
   const addTodo = (text) => {
     const newTodos = [...todos, { text, completed: false }];
     setTodos(newTodos);
   };
 
+  // Function for editing tasks
   const updateTodo = (index, newText) => {
     const newTodos = [...todos];
     newTodos[index].text = newText;
     setTodos(newTodos);
   };
 
+  // Function for deleting tasks
   const deleteTodo = (index) => {
     const newTodos = todos.filter((_, i) => i !== index);
     setTodos(newTodos);
@@ -36,13 +40,15 @@ function App() {
     setTodos(newTodos);
   };
 
+  //To show tasks in completed part, pending part, and all part
   const filteredTodos = todos.filter(todo => {
     if (filter === 'Completed') return todo.completed;
     if (filter === 'Pending') return !todo.completed;
-    if (filter === 'All') return true; // Show all tasks for the "All" filter
+    if (filter === 'All') return true;
     return true;
   });
 
+  //This is so when you click the buttons, it will show you tasks related for that button
   return (
     <div className="App">
       <div className="todo-container">

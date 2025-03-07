@@ -35,6 +35,7 @@ button {
   border-radius: 21px;
 } 
 
+/* Color for edit and delete button */
 .todo-buttons .edit-button {
   background-color: green;
   color: white;

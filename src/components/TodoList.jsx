@@ -11,6 +11,7 @@ const TodoList = ({ todos, addTodo, updateTodo, deleteTodo, toggleTodo }) => {
     }
   };
 
+  // Container for the add new task text field and add button
   return (
     <div className="todo-container">
       <input
