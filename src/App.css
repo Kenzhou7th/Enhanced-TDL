@@ -2,8 +2,8 @@
   --background-color: #fff;
   --text-color: #000;
   --container-background-color: rgb(255, 255, 255);
-  /*--background-image-light: url('./assets/dark-mode.webp');
-  --background-image-dark: url('./assets/light-mode.jpg');*/
+  --background-image-light: url('./assets/dark-mode.webp');
+  --background-image-dark: url('./assets/light-mode.jpg');
 }
 
 /* Dark Mode styling part */
