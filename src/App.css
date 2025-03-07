@@ -1,5 +1,49 @@
+:root {
+  --background-color: #fff;
+  --text-color: #000;
+  --container-background-color: rgb(255, 255, 255);
+  --background-image-light: url('./assets/dark-mode.webp');
+  --background-image-dark: url('./assets/light-mode.jpg');
+}
+
+body.light-mode {
+  --background-color: #242424;
+  --text-color: #fff;
+  --container-background-color: #2e2e2e;
+  background-image: var(--background-image-dark);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+body.dark-mode {
+  --background-color: #fff;
+  --text-color: #000;
+  --container-background-color: #8e3dcf;
+  background-image: var(--background-image-light);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
 .App {
   text-align: center;
+}
+
+.todo-container {
+  margin: 0 auto;
+  max-width: 700px;
+  padding: 20px;
+  border: 3px solid #000000;
+  border-radius: 21px;
+  background-color: var(--container-background-color);
+}
+
+.filter-buttons {
+  margin-bottom: 20px;
 }
 
 ul {
@@ -8,11 +52,43 @@ ul {
 }
 
 li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin: 10px 0;
+}
+
+.todo-text {
+  display: flex;
+  align-items: center;
+}
+
+.todo-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.add-button {
+  border-radius: 21px;
+  padding: 10px 15px;
 }
 
 button {
   margin-left: 10px;
+  border-radius: 21px;
+  padding: 10px 21px;
+}
+
+.light-mode-button {
+  background-color: #ffffff;
+  color: #000000;
+  border-radius: 21px;
+}
+
+.dark-mode-button {
+  background-color: #222222;
+  color: #ffffff;
+  border-radius: 21px;
 }
 
 li.completed {
