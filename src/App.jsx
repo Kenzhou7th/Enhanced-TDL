@@ -7,6 +7,7 @@ function App() {
     { text: 'Sample Task 1', completed: false },
     { text: 'Sample Task 2', completed: false }
   ]);
+  const [filter, setFilter] = useState('All');
 
   const updateTodo = (index, newText) => {
     const newTodos = [...todos];
@@ -20,10 +21,21 @@ function App() {
     setTodos(newTodos);
   };
 
+  const filteredTodos = todos.filter(todo => {
+    if (filter === 'Completed') return todo.completed;
+    if (filter === 'Pending') return !todo.completed;
+    return true;
+  });
+
   return (
     <div>
       <h1>React TODO App</h1>
-      <TodoList todos={todos} updateTodo={updateTodo} toggleTodo={toggleTodo} />
+      <div>
+        <button onClick={() => setFilter('All')}>All</button>
+        <button onClick={() => setFilter('Completed')}>Completed</button>
+        <button onClick={() => setFilter('Pending')}>Pending</button>
+      </div>
+      <TodoList todos={filteredTodos} updateTodo={updateTodo} toggleTodo={toggleTodo} />
     </div>
   );
 }

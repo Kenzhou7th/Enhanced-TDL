@@ -18,7 +18,7 @@ const TodoItem = ({ index, text, completed, updateTodo, toggleTodo }) => {
   };
 
   return (
-    <li style={{ textDecoration: completed ? 'line-through' : 'none' }}>
+    <li className={completed ? 'completed' : ''}>
       <input type="checkbox" checked={completed} onChange={handleToggleClick} />
       {isEditing ? (
         <input
